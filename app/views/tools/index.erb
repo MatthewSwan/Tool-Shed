@@ -1,0 +1,9 @@
+<h1>Tools Index</h1>
+
+<% @tools.each do |tool| %>
+  <div>
+    <%= tool.name %>
+    | Quantity: <%= tool.quantity %>
+    | Price: <%= tool.price %>
+  </div>
+<% end %>
