@@ -12,7 +12,16 @@ class ToolsController < ApplicationController
   end
 
   def create
-    tool = Tool.create(params[:tool].symbolize_keys)
+    Tool.create(params[:tool].symbolize_keys)
     redirect_to tools_path
+  end
+
+  def edit
+    @tool = Tool.find(params[:id])
+  end
+
+  def update
+    tool = Tool.update(params[:id], {name: params[:tool][:name], price: params[:tool][:price], quantity: params[:tool][:quantity]})
+    redirect_to tool_path tool
   end
 end

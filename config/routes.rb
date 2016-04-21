@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   get "/tools", to: "tools#index", as: "tools"
   get "/tools/new", to: "tools#new", as: "new_tool"
   post "/tools", to: "tools#create", as: "create"
+  get "/tools/edit/:id", to: "tools#edit", as: "edit"
   get "/tools/:id", to: "tools#show", as: "tool"
+  patch "tools/:id", to: "tools#update", as: "update"
   #get '/tools/'+tool.name, to: 'tools#show', as: 'tool'
   # Example resource route with options:
   #   resources :products do
