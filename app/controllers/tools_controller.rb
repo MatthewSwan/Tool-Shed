@@ -12,9 +12,7 @@ class ToolsController < ApplicationController
   end
 
   def create
-    require "pry"
-    binding.pry
-    tool = Tool.create(params[:tool])
+    tool = Tool.create(params[:tool].symbolize_keys)
     redirect_to tools_path
   end
 end
